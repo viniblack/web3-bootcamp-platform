@@ -13,6 +13,7 @@ const Sortbar = ({ filters, setFilters }) => {
       [e.target.name]: e.target.value,
     })
   }
+  
   return (
     <div className="text-white h-10 w-full sm:w-64">
       <div
@@ -20,7 +21,7 @@ const Sortbar = ({ filters, setFilters }) => {
           isLight ? 'bg-gray-200 bg-opacity-75' : 'bg-black-200 bg-opacity-75'
         } `}
       >
-        <span className=" text-[14px]">{t('sortBy')}</span>
+        <span className="text-[14px]">{t('sortBy')}</span>
         <label>
           <select
             name="status"
@@ -29,8 +30,8 @@ const Sortbar = ({ filters, setFilters }) => {
               isLight ? 'text-black-400' : 'text-[#99e24d]'
             }`}
           >
-            <option value="">{t('context depth')}</option>
-            <option value="">{t('reward')}</option>
+            <option value="contextDepth">{t('contextDepth')}</option>
+            <option value="reward">{t('reward')}</option>
           </select>
         </label>
       </div>
