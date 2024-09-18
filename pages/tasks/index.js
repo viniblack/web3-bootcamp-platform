@@ -13,7 +13,7 @@ import { useFilterState } from '../../components/Filter/utils'
 import { getUserFromFirestore } from '../../lib/user'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../firebase/initFirebase'
-import { sortIssues } from '../../components/SortBar/utils'
+import { sortFilter } from '../../components/SortBar/utils'
 
 const TaskPage = ({ issues }) => {
   const { t } = useTranslation()
@@ -21,6 +21,11 @@ const TaskPage = ({ issues }) => {
   const isLightTheme = theme === 'light'
   const [searchQuery, setSearchQuery] = useState('')
   const [userAuth, setUserAuth] = useState(null)
+  const [dataSortBar, setDataSortBar] = useState('ContextDepth')
+  const sortedIssues = sortFilter(dataSortBar, filteredIssues)
+  const filterSortbar = (data) => {
+    setDataSortBar(data)
+  }
   const {
     filters,
     selectedFilters,
@@ -32,12 +37,7 @@ const TaskPage = ({ issues }) => {
     availableAmounts,
     getFilterComponentProps,
   } = useFilterState(issues)
-  const [dataSortBar, setDataSortBar] = useState('ContextDepth')
-
-  const filterSortbar = (data) => {
-    setDataSortBar(data)
-  }
-
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
@@ -55,7 +55,6 @@ const TaskPage = ({ issues }) => {
     return <p>Loading...</p>
   }
 
-  const sortedIssues = sortIssues(dataSortBar, filteredIssues)
 
   return (
     <>

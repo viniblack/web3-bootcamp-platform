@@ -11,7 +11,7 @@ export const filteredSortbar = (filters, toKeep) => {
   }, {})
 }
 
-export const sortIssues = (sortBy, issues) => {
+export const sortFilter = (sortBy, issues) => {
   return [...issues].sort((a, b) => {
     switch (sortBy) {
       case 'Amount':
