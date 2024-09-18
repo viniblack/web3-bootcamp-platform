@@ -31,13 +31,15 @@ const Sortbar = ({ filters, sendFilterSortbar }) => {
               isLight ? 'text-black-400' : 'text-[#99e24d]'
             }`}
           >
-            {Object.entries(filteredSortbar(filters)).map(([filterName]) => {
-              return (
-                <option key={filterName} value={filterName.replace(/\s+/g, '')}>
-                  {filterName}
-                </option>
-              )
-            })}
+            {Object.entries(filteredSortbar(filters, ['Amount', 'Context Depth'])).map(
+              ([filterName]) => {
+                return (
+                  <option key={filterName} value={filterName.replace(/\s+/g, '')}>
+                    {filterName}
+                  </option>
+                )
+              }
+            )}
           </select>
         </label>
       </div>

@@ -32,7 +32,7 @@ const TaskPage = ({ issues }) => {
     availableAmounts,
     getFilterComponentProps,
   } = useFilterState(issues)
-  const [dataSortBar, setDataSortBar] = useState('')
+  const [dataSortBar, setDataSortBar] = useState('ContextDepth')
 
   const filterSortbar = (data) => {
     setDataSortBar(data)
@@ -54,7 +54,7 @@ const TaskPage = ({ issues }) => {
   if (userAuth === undefined) {
     return <p>Loading...</p>
   }
-  
+
   const sortedIssues = sortIssues(dataSortBar, filteredIssues)
 
   return (
