@@ -168,6 +168,7 @@
   "sortBy": "Ordenar por",
   "projects": "PROJETOS",
   "back": "Voltar",
+  "searchTask": "Pesquisar por título e descrição",
   "issue": {
     "userNotFound": "Usuário não encontrado",
     "ErrorFetchingUser": "Erro ao buscar dados do usuário",

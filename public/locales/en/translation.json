@@ -168,6 +168,7 @@
   "sortBy": "Sort by",
   "projects": "PROJECTS",
   "back": "Back",
+  "searchTask": "Search by title and description",
   "issue": {
     "userNotFound": "User not found",
     "ErrorFetchingUser": "Error fetching user data",
